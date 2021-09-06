@@ -1,0 +1,29 @@
+'''The whole idea is the that gnome looks to his side.
+case 1: no flowerpot to the gnome's side, task done, end. 
+case 2: flowerpot to the gnome's side but 
+no pot behind this one, take step forward
+case 3: flower pot to the side and one behind are not in 
+the right order, gnome swaps them and takes one step back'''
+
+
+def gnomeSort(array):
+	a = 0 #gnomes position
+	#b = 2
+	length = len(array)
+	while a < length: 
+		if (a == 0):
+			a += 1
+		if (array[a-1] <= array[a]):
+			#if the flower is bigger than the previous
+			a += 1
+			print("check")
+		else: 
+			#swap positions
+			array[a], array[a-1] = array[a-1], array[a] 
+			a -= 1
+			print("second")	
+	return array
+			
+print(gnomeSort([3,2,1]))
+print("done")
+
